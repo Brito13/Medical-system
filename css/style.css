@@ -1,0 +1,418 @@
+:root {
+  --blanco: white;
+  --oscuro: black;
+  --Primario: yellow;
+  --secundario: blue;
+  --gris: grey;
+}
+
+/*Globales*/
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; /*Hack para box model*/
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.botones {
+  display: flex;
+  gap: 20px; /* espacio entre los botones */
+}
+.hero {
+  background-image: url(/img/doctor.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2rem;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Krub', sans-serif;
+}
+
+/*Titulos*/
+.titulo {
+  text-align: center;
+  padding-left: 70rem;
+}
+
+.navegacion-principal {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navegacion-principal a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px;
+}
+
+
+.navegacion-principal a:hover {
+  background-color: var(--oscuro);
+  border-radius: 10px;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+}
+
+/*Recuerda arrglar los midia para 
+la imagen y los botones*/
+@media (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 600px;
+  }
+}
+
+.hero {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.contenido-hero {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  display: inline-block;
+  justify-content: center;
+  font-weight: bold;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
+}
+
+.ubicacion {
+  margin-top: 19rem;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--secundario);
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: var(--oscuro);
+}
+
+.contenedor {
+  text-align: center;
+  display: flex;
+  display: inline-block;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 10px;
+}
+
+.sombra {
+  -webkit-box-shadow: 10px 7px 10px -7px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 10px 7px 10px -7px rgba(0, 0, 0, 0.71);
+  box-shadow: 10px 7px 10px -7px rgba(0, 0, 0, 0.71);
+  background-color: var(--blanco);
+  border-radius: 10px;
+}
+
+/*Mis servicios*/
+
+/*Se le indica que repita 3 veces 1fr del data grip
+  del 100%
+  la sitaxis normal es
+  grid-template-columns: 1fr 1fr 1fr;
+  la otra es grid-template-columns: 33.3% 33.3% 33.3%;
+  */
+
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.servicio:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.servicio p {
+  text-align: center;
+  line-height: 2;
+}
+
+.contenedor h2 {
+  font-weight: bold;
+}
+
+.servicio .iconos {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--secundario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.formulario {
+  background-color: blue;
+  width: min(60rem, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+
+.formulario label {
+  color: var(--blanco);
+}
+
+.formulario fieldset legend {
+  color: var(--blanco);
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.fondo{
+  padding-top: 10rem;
+}
+
+
+.campo {
+  margin-bottom: 2rem;
+}
+
+.campo label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input-campo {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.enviar .boton {
+  width: 100%;
+}
+
+.fondo {
+  background-color: var(--secundario);
+  padding: 2rem;
+  color: var(--blanco);
+  text-align: center;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Pantallas pequeñas*/
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .contacto {
+    margin-top: 4rem;
+  }
+
+  .titulo {
+    padding-left: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .botones {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .boton {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .navegacion-principal {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    height: 300px;
+  }
+
+  .contenido-hero {
+    position: static;
+    background-color: rgba(0,0,0,0.6);
+    padding: 2rem 1rem;
+  }
+
+  .contenedor {
+    margin-top: 6rem;
+    display: block;
+    padding: 0 1rem;
+  }
+
+  .servicios {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .servicio {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .servicio .iconos {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .ubicacion {
+    margin-top: 10rem;
+  }
+
+  .formulario {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+/*Pantallas medianas*/
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2.2rem;
+    padding-left: 0;
+  }
+
+  .boton {
+    padding: 0.8rem 2rem;
+    font-size: 1.3rem;
+  }
+
+  .servicios {
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+
+  .servicio .iconos {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .hero {
+    height: 400px;
+  }
+
+  .contenido-hero {
+    padding: 2rem;
+  }
+
+  .ubicacion {
+    margin-top: 15rem;
+  }
+}
+
+/*Pantallas grandes*/
+@media (min-width: 992px) {
+  .titulo {
+    font-size: 2.8rem;
+  }
+
+  .boton {
+    font-size: 1.4rem;
+    padding: 1rem 3rem;
+  }
+
+  .hero {
+    height: 600px;
+  }
+}
